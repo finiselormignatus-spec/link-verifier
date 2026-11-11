@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "link-verifier"
+version = "0.1.0"
+description = "Check whether URLs are legitimate, reachable, and safe."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "requests>=2.32.0",
+]
+
+[project.scripts]
+link-verifier = "link_verifier.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
